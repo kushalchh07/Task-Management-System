@@ -1,0 +1,20 @@
+f(isset($_POST['submit'])){
+   //getting the value in variables
+   
+    $name =$_POST['name'];
+    $description =$_POST['description'];
+    $time =$_POST['time'];
+    $priority =$_POST['priority'];
+// checking all the fields all field.
+    if($name!="" && $description!="" && $time!="" && $priority!=""){
+  $query ="update `tasks` set id=$id,title=' $name ',description='$description',time='$time',priority='$priority' ";
+  $result=mysqli_query($connection,$query);
+  if($result){
+    header('location: display.php');
+  }
+    }
+  else{
+    echo "All fields are required.";
+  }
+
+  }
