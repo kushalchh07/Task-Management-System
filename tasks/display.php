@@ -1,4 +1,9 @@
 <?php include '../connection/config.php';
+session_start();
+if (!isset($_SESSION['email'])) {
+  header("Location: login.php");
+  exit();
+}
 ?>
 
 <!doctype html>
@@ -21,6 +26,10 @@
   
  
 <a name="" id="" class="btn btn-primary my-5" href="create.php" role="button">AddTasks</a>
+<!-- <form action="logout.php" method="POST"> -->
+<a name="" id="" class="btn btn-primary my-5" href="logout.php" role="button">logout</a>
+
+        <!-- </form> -->
   <div class="table-responsive">
     <table class="table table-primary">
       <thead>
